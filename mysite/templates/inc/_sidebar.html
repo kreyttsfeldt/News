@@ -1,0 +1,16 @@
+{% load news_tags %}
+
+<div class="list-group">
+    {% show_categories %}
+    {%for i in categories%}
+    <a href="{%url 'category' i.pk %}" class="list-group-item list-group-item-action" aria-current="true">
+        {{i.title}}
+    </a>
+    {%endfor%}
+</div>
+
+<br>
+
+{% comment 'Второй таккой же список'%}
+{% show_categories %}
+{% endcomment %}
